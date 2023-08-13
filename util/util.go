@@ -840,7 +840,12 @@ func IsEastAsianWideRune(r rune) bool {
 		unicode.Is(unicode.Katakana, r) ||
 		unicode.Is(unicode.Han, r) ||
 		unicode.Is(unicode.Lm, r) ||
-		unicode.Is(unicode.Hangul, r)
+		unicode.Is(unicode.Hangul, r) ||
+		unicode.Is(&unicode.RangeTable{
+			R16: []unicode.Range16{
+				{0x3001, 0x3002, 1},
+			},
+		}, r)
 }
 
 // A BufWriter is a subset of the bufio.Writer .
