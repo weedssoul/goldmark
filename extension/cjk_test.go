@@ -215,7 +215,7 @@ func TestEastAsianLineBreaks(t *testing.T) {
 		html.WithUnsafe(),
 	),
 		goldmark.WithExtensions(
-			NewCJK(WithEastAsianLineBreaks(WithWorksEvenWithOneSide())),
+			NewCJK(WithEastAsianLineBreaks(EastAsianLineBreaksCSS3Draft)),
 		),
 	)
 	no = 9
